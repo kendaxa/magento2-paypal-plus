@@ -1,5 +1,5 @@
 {
-  "name": "iways/module-pay-pal-plus",
+  "name": "kendaxa/module-pay-pal-plus",
   "description": "PayPal Plus for Magento 2",
   "repositories": [
     { "type": "composer", "url": "https://packagist.org" },
@@ -12,9 +12,9 @@
   },
   "authors": [
     {
-      "name": "Robert Hillebrand",
-      "email": "hillebrand@i-ways.net",
-      "homepage": "https://www.i-ways.net",
+      "name": "Vitor Villar",
+      "email": "v.villar@kendaxa.com",
+      "homepage": "https://kendaxa.com",
       "role": "Senior Software Developer"
     }
   ],
