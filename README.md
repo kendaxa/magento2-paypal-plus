@@ -13,7 +13,7 @@ To install the Magento 2 PayPal Plus extension please add our repository to your
     {
         "repositories": [
                 {
-                    "url": "git@github.com:i-ways/magento2-paypal-plus.git",
+                    "url": "git@github.com:kendaxa/magento2-paypal-plus.git",
                     "type": "git"
                 }
             ]
@@ -23,12 +23,12 @@ After you added our repository you need to require our module.
 
 There are to possibilities:
 
-1. Run the command _composer require iways/module-pay-pal-plus_
+1. Run the command _composer require kendaxa/module-pay-pal-plus_
 2. Add it manually to your _composer.json_
 
 
     "require": {
-           "iways/module-pay-pal-plus": "~1.0"
+           "kendaxa/module-pay-pal-plus": "~1.0"
     }
 
 ## Enable our module in Magento

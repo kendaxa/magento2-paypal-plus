@@ -37,7 +37,8 @@ class MethodList extends \Magento\Payment\Model\MethodList
         \Magento\Payment\Model\Checks\SpecificationFactory $specificationFactory,
         ScopeConfigInterface $scopeConfig
 
-    ) {
+    )
+    {
         $this->scopeConfig = $scopeConfig;
         parent::__construct($paymentHelper, $specificationFactory);
     }
@@ -78,22 +79,18 @@ class MethodList extends \Magento\Payment\Model\MethodList
                 }
 
                 if ($checkPPP) {
-                    if (
-                    ($method->getCode() == Payment::CODE
-                        || $method->getCode() == self::AMAZON_PAYMENT
-                        || !in_array($method->getCode(), $allowedPPPMethods))
-                    ) {
+                    if (($method->getCode() == Payment::CODE || $method->getCode() == self::AMAZON_PAYMENT || !in_array($method->getCode(), $allowedPPPMethods))) {
                         $methods[] = $method;
                     }
                 } else {
                     $methods[] = $method;
                 }
-                if ($method->getCode() == Free::PAYMENT_METHOD_FREE_CODE) {
+                if ($method->getCode() == Free::PAYMENT_METHOD_FREE_CODE && in_array($method, $methods)) {
                     $isFreeAdded = true;
                 }
             }
         }
-        if (!$isFreeAdded && !$quote->getGrandTotal()) {
+        if (!$isFreeAdded && !(float)$quote->getGrandTotal()) {
             $methods = $this->addFree($methods, $quote);
         }
         return $methods;
